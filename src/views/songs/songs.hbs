@@ -1,0 +1,30 @@
+<div class="container-fluid bg-white p-4 rounded">
+    <h1 class="display-4 mb-4">Tus canciones</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">Título</th>
+                <th class="text-center" scope="col">Artista</th>
+                <th class="text-center" scope="col">Álbum</th>
+                <th class="text-center" scope="col">Foto</th>
+                <th class="text-center" scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each songs}}
+            <tr>
+                <td class="align-middle text-center" scope="row">{{title}}</td>
+                <td class="align-middle text-center" scope="row">{{artist}}</td>
+                <td class="align-middle text-center" scope="row">{{album}}</td>
+                <td class="align-middle text-center" scope="row">
+                    <img src="{{imageURL}}" alt="" height="100px" width="100px">
+                </td>
+                <td class="align-middle text-center" scope="row">
+                    <a href="/songs/edit/{{_id}}" class="btn btn-success">Editar</a>
+                    <a href="/songs/delete/{{_id}}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
